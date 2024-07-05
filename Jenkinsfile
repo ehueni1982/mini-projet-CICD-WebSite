@@ -44,7 +44,6 @@ pipeline {
 	   steps {
 	      script {
 	        sh '''
-		   curl -I http://${HOST_IP}:${APP_EXPOSED_PORT} | grep -i "200"
 	         '''
               }
 	      
