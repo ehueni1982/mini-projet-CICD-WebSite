@@ -44,7 +44,7 @@ pipeline {
 	   steps {
 	      script {
 	        sh '''
-	           curl 127.17.0.1 | grep -i "Dimension"
+		   curl -I http://${HOST_IP}:${APP_EXPOSED_PORT} | grep -i "200"
 	         '''
               }
 	      
