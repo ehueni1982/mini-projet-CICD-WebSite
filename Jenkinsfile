@@ -81,7 +81,7 @@ pipeline {
 		    expression { GIT_BRANCH == 'origin/main' }
 	    }
             agent {
-		   docker { image 'framela/dind' }
+		   docker { image 'franela/dind' }
 	    }
 
 	    environment {
@@ -108,7 +108,7 @@ pipeline {
 	      }
 
 	      agent {
-		      docker { image 'framela/dind' }
+		      docker { image 'franela/dind' }
 	      }
 
               environment {
