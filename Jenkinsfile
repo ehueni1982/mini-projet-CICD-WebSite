@@ -44,7 +44,7 @@ pipeline {
 	   steps {
 	      script {
 	        sh '''
-                   curl 172.17.0.1 | grep -i "Dimension"
+                   curl 192.168.56.68 | grep -i "Dimension"
 	         '''
               }
 	      
