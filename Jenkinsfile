@@ -33,7 +33,7 @@ pipeline {
 		    docker run --name $IMAGE_NAME -d -p $APP_EXPOSED_PORT:$APP_CONTAINER_PORT -e PORT=$APP_CONTAINER_PORT ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG
 		    sleep 5
 
-		''' 
+               ''' 
 	      }
 
            }
@@ -44,7 +44,8 @@ pipeline {
 	   steps {
 	      script {
 	        sh '''
-                   curl 192.168.56.68 | grep -i "Dimension"
+                   curl 172.17.0.1 | grep -i "Dimension"
+
 	         '''
               }
 	      
@@ -58,6 +59,7 @@ pipeline {
 	        sh '''
 	           docker stop $IMAGE_NAME
 	           docker rm $IMAGE_NAME
+
 	         '''
 	      }
 
@@ -71,6 +73,7 @@ pipeline {
 	        sh '''
 	           echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_ID --password-stdin
 		   docker push ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG
+
 	        '''
 	       }
 
@@ -97,6 +100,7 @@ pipeline {
 		     heroku create $STAGING || echo "projets already exist"
 		     heroku container:push -a $STAGING web
 		     heroku container:release -a $STAGING web
+
 		  '''
 		 }
 
@@ -124,6 +128,7 @@ pipeline {
 		      heroku create $PRODUCTION || echo "projets already exits"
 		      heroku container:push -a $PRODUCTION web
 		      heroku container:release -a $PRODUCTION web
+
 		   '''
 	          }
 
