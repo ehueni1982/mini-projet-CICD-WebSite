@@ -6,9 +6,9 @@ services:
     # image: 'bitnami/jenkins:2'
     image: dirame/jenkins-docker-ansible-clair
     ports:
-      - '8080:8080'
+      - '80:8080'
       - '443:8443'
-      - '50000:50000'
+      - '5000:5000'
     privileged: true
     volumes:
       - 'jenkins_data:/bitnami'
