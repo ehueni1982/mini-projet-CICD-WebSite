@@ -99,7 +99,7 @@ pipeline {
 	             npm install -g heroku
 	             heroku container:login
 		     heroku create $STAGING || echo "projets already exist" --entrypoint=""
-		     heroku container:push -a $STAGING
+		     heroku container:push -a $STAGING --app
 		     heroku container:release -a $STAGING
 
 		  '''
@@ -127,7 +127,7 @@ pipeline {
 		      npm install -g heroku
 		      heroku container:login
 		      heroku create $PRODUCTION || echo "projets already exits" --entrypoint=""
-		      heroku container:push -a $PRODUCTION
+		      heroku container:push -a $PRODUCTION --app
 		      heroku container:release -a $PRODUCTION
 
 		   '''
