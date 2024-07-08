@@ -6,7 +6,7 @@ pipeline {
     environment {
         IMAGE_NAME = "staticwebsite"
 	APP_CONTAINER_PORT = "5000"
-	APP_EXPOSED_PORT = "3330"
+	APP_EXPOSED_PORT = "50000"
 	IMAGE_TAG = "latest"
 	STAGING = "ehueniapp-staging"
 	PRODUCTION = "ehueniapp-prod"
