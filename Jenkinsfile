@@ -98,7 +98,7 @@ pipeline {
 	             apk --no-cache add npm
 	             npm install -g heroku
 	             heroku container:login
-		     heroku create $STAGING || echo "projets already exist" --entrypoint=''
+		     heroku create $STAGING || echo "projets already exist" --entrypoint=""
 		     heroku container:push -a $STAGING
 		     heroku container:release -a $STAGING
 
@@ -126,7 +126,7 @@ pipeline {
 		      apk --no-cache add npm
 		      npm install -g heroku
 		      heroku container:login
-		      heroku create $PRODUCTION || echo "projets already exits" --entrypoint=''
+		      heroku create $PRODUCTION || echo "projets already exits" --entrypoint=""
 		      heroku container:push -a $PRODUCTION
 		      heroku container:release -a $PRODUCTION
 
