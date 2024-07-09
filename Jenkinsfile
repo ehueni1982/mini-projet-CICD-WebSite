@@ -128,7 +128,7 @@ pipeline {
 		      #heroku container:login
 		      #heroku create $PRODUCTION || echo "projets already exits" --entrypoint=""
 		      #heroku container:push -a $PRODUCTION
-		      "heroku container:release -a $PRODUCTION
+		      #"heroku container:release -a $PRODUCTION
 
 		   '''
 	          }
