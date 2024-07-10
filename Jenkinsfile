@@ -6,7 +6,7 @@ pipeline {
     environment {
         IMAGE_NAME = "staticwebsite"
 	APP_CONTAINER_PORT = "5000"
-	APP_EXPOSED_PORT = "80"
+	APP_EXPOSED_PORT = "8080"
 	IMAGE_TAG = "latest"
 	STAGING = "ehueniapp-staging"
 	PRODUCTION = "ehueniapp-prod"
@@ -45,7 +45,7 @@ pipeline {
 	   steps {
 	      script {
 	        sh '''
-                   #curl localhost | grep -i "Dimension"
+                   curl localhost | grep -i "Dimension"
 
 	         '''
               }
